@@ -38,7 +38,7 @@ docker run --rm \
   -e POSTGRES_USER=postgres \
   -e POSTGRES_PASSWORD=secret \
   -e POSTGRES_VERSION=16 \
-  cloudwithdan/bunny-postgres-backup:v1.0.0
+  cloudwithdan/bunny-postgres-backup:latest
 ```
 
 ### Kubernetes CronJob
@@ -56,7 +56,7 @@ spec:
         spec:
           containers:
           - name: postgres-backup
-            image: cloudwithdan/bunny-postgres-backup:v1.0.0
+            image: cloudwithdan/bunny-postgres-backup:latest
             env:
             - name: BUNNY_STORAGE_ZONE
               value: "my-storage-zone"

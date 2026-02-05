@@ -62,4 +62,10 @@ printf " Done.\n"
 # cleanup
 rm -f "./${BACKUP_FILE_NAME}"
 
+if [[ -n "${HEARTBEAT_URL}" ]]; then
+  printf "Sending heartbeat..."
+  curl -Ssf -o /dev/null "${HEARTBEAT_URL}"
+  printf " Done.\n"
+fi
+
 printf "Backup completed in %s seconds.\n" "${SECONDS}"
